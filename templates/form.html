@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Predictor Form</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            padding: 50px;
+            width: 90%;
+            max-width: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            width: 48%;
+            margin-bottom: 20px;
+        }
+
+        .full-width {
+            width: 100%;
+        }
+
+        label {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 10px;
+            animation: fadeInUp 1.2s ease-out;
+        }
+
+        input[type="text"],
+        select {
+            width: calc(100% - 24px);
+            padding: 10px 12px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            transition: border-color 0.3s ease-in-out;
+            animation: fadeInUp 1.4s ease-out;
+        }
+
+        input[type="text"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #5c98f2;
+        }
+
+        input[type="submit"] {
+            background-color: #ff6f61;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            animation: fadeInUp 1.6s ease-out;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #e65c54;
+            transform: translateY(-5px);
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>College Predictor</h1>
+        <form action="/form" method="post">
+            <div class="form-group">
+                <label for="rank">Enter your rank:</label>
+                <input type="text" id="rank" name="rank">
+            </div>
+
+            <div class="form-group">
+                <label for="category">Select your category:</label>
+                <select id="category" name="category">
+                    <option value="0">GEN</option>
+                    <option value="1">OBC-NCL</option>
+                    <option value="2">SC</option>
+                    <option value="3">ST</option>
+                    <option value="4">GEN-PWD</option>
+                    <option value="5">OBC-NCL-PWD</option>
+                    <option value="6">SC-PWD</option>
+                    <option value="7">ST-PWD</option>
+                    <option value="8">GEN-EWS</option>
+                    <option value="9">GEN-EWS-PWD</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="round">Enter round number:</label>
+                <input type="text" id="round" name="round">
+            </div>
+
+            <div class="form-group">
+                <label for="quota">Select your quota:</label>
+                <select id="quota" name="quota">
+                    <option value="0">AI</option>
+                    <option value="1">AP</option>
+                    <option value="2">GO</option>
+                    <option value="3">HS</option>
+                    <option value="4">JK</option>
+                    <option value="5">LA</option>
+                    <option value="6">OS</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="pool">Select your pool:</label>
+                <select id="pool" name="pool">
+                    <option value="0">Gender-Neutral</option>
+                    <option value="1">Female-Only</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
