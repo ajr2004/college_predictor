@@ -31,7 +31,7 @@ def form():
         user_rank = int(request.form['rank'])
         user_category = int(request.form['category'])
         user_round = int(request.form['round'])
-        user_quota = int(request.form['quota'])
+        user_quota = int(request.form['quotas'])
         user_pool = int(request.form['pool'])
 
         # Prepare the data for prediction
